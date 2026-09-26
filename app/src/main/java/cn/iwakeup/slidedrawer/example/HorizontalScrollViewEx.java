@@ -1,4 +1,4 @@
-package com.example.wvdrawercontainer;
+package cn.iwakeup.slidedrawer.example;
 
 import android.annotation.TargetApi;
 import android.content.Context;

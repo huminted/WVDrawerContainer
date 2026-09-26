@@ -4,19 +4,17 @@ plugins {
 }
 
 android {
-    namespace = "com.example.wvdrawercontainer"
+    namespace = "cn.iwakeup.slidedrawer.example"
     compileSdk {
-        version = release(37)
+        version = release(35)
     }
 
     defaultConfig {
-        applicationId = "com.example.wvdrawercontainer"
+        applicationId = "cn.iwakeup.slidedrawer.example"
         minSdk = 24
-        targetSdk = 37
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -46,10 +44,7 @@ dependencies {
     implementation(libs.androidx.dynamicanimation.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.recyclerview)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.androidx.junit)
+
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
 

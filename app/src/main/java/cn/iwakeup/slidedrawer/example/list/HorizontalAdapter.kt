@@ -1,11 +1,11 @@
-package com.example.wvdrawercontainer.demo.list
+package cn.iwakeup.slidedrawer.example.list
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wvdrawercontainer.R
+import cn.iwakeup.slidedrawer.example.R
 
 class HorizontalAdapter(
     private val items: List<String>

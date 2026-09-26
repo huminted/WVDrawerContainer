@@ -1,4 +1,4 @@
-package com.example.wvdrawercontainer.ui.theme
+package cn.iwakeup.slidedrawer.example.theme
 
 import androidx.compose.ui.graphics.Color
 

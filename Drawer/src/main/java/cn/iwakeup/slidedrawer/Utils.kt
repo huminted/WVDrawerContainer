@@ -1,4 +1,4 @@
-package cn.iwakeup.drawer
+package cn.iwakeup.slidedrawer
 
 import android.content.Context
 import android.util.TypedValue

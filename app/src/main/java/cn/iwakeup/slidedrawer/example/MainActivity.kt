@@ -1,4 +1,4 @@
-package com.example.wvdrawercontainer
+package cn.iwakeup.slidedrawer.example
 
 import android.app.Activity
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import cn.iwakeup.drawer.WvDrawer
-import com.example.wvdrawercontainer.demo.list.VerticalAdapter
+import cn.iwakeup.slidedrawer.SlideDrawer
+import cn.iwakeup.slidedrawer.example.list.VerticalAdapter
 
 class MainActivity : Activity() {
 
@@ -19,26 +19,31 @@ class MainActivity : Activity() {
 
         setContentView(R.layout.app)
 
-        val drawer = findViewById<WvDrawer>(R.id.drawer)
-        drawer.setupDrawer(getDrawerContent(), getMainContent())
-
-
+        val drawer = findViewById<SlideDrawer>(R.id.drawer)
+        drawer.setMainContent(getMainContent())
+        drawer.setDrawerContent(getDrawerContent())
     }
 
 
     fun getDrawerContent(): View {
 
         return LayoutInflater.from(this).inflate(R.layout.layout_drawer_content, null).apply {
-            layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+            layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
         }
     }
 
 
     fun getMainContent(): View {
-
-        val mainContentView = LayoutInflater.from(this).inflate(R.layout.layout_main_content, null).apply {
-            layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-        }
+        val mainContentView =
+            LayoutInflater.from(this).inflate(R.layout.layout_main_content, null).apply {
+                layoutParams = ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT
+                )
+            }
 
         val data = List(10) { row ->
 
@@ -46,7 +51,7 @@ class MainActivity : Activity() {
                 "R${row + 1} - ${column + 1}"
             }
         }
-        val list = mainContentView.findViewById<RecyclerView>(R.id.list).apply {
+        mainContentView.findViewById<RecyclerView>(R.id.list).apply {
             adapter = VerticalAdapter(data)
             layoutManager = LinearLayoutManager(context)
         }

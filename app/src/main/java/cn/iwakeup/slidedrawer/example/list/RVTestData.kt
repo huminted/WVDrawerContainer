@@ -1,4 +1,4 @@
-package com.example.wvdrawercontainer.demo.list
+package cn.iwakeup.slidedrawer.example.list
 
 
 val TEST_DATA = listOf(
